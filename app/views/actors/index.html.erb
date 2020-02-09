@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% @actor.each do |item| %>
+        <div class="card" style="width: 18rem;">
+            <img src=<%= item.image_url %> class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= item.name %></h5>
+                <p class="card-text"><%= item.bio %></p>
+                <h6 class="card-title"><strong>Birth Date: </strong> <%= item.birth_date %></h6>
+                <h6 class="card-title"><strong>Birth place: </strong> <%= item.birth_place %></h6>
+                <% if item.alive == false %>
+                    <h6 class="card-title"><strong>Death Date: </strong> <%= item.death_date %></h6>
+                    <h6 class="card-title"><strong>death place: </strong> <%= item.death_place %></h6>
+                <% end %>
+            </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
