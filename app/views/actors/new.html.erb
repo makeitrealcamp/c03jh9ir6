@@ -1,0 +1,12 @@
+<%= form_for @actor do |f| %>
+	<%= f.text_field :name , placeholder: "Nombre del actor"%><br />
+	<%= f.text_area :bio , placeholder: "Biografia del actor"%><br />
+	<%= f.date_field :birth_date , placeholder: "Fecha de nacimiento"%><br />
+	<%= f.text_field :birth_place , placeholder: "Lugar de nacimiento"%><br />
+	<%= f.url_field :image_url, placeholder: "Foto" %><br />
+	<%= f.check_box :alive %>
+	<%= f.label "¿Está vivo?" %> <br />
+	<%= f.date_field :death_date , placeholder: "Fecha de fallecimiento"%> <br />
+	<%= f.text_field :death_place , placeholder: "Lugar de nacimiento"%> <br />
+	<%= f.submit "Crear Actor" %>
+<% end %>
