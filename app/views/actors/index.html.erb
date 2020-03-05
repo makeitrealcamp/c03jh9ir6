@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <% @actor.each do |item| %>
+      <% @actors.each do |item| %>
         <div class="card" style="width: 18rem;">
             <img src=<%= item.image_url %> class="card-img-top" alt="...">
             <div class="card-body">
@@ -21,3 +21,4 @@
   </div>
 </div>
 
+<%= link_to 'Crear Actor', new_actor_path %>
