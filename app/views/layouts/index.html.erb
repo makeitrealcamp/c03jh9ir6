@@ -1,0 +1,46 @@
+<h1 class="text-center">Listado Actores</h1>
+  <% @actores.each do | actor | %>
+    <% if actor.alive == true %>
+        <div class="card border-dark mb-3 center-block" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="<%= actor.image_url %>" class="card-img" alt="<%= actor.name %>">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><strong><%= actor.name %></strong></h5>
+                <p class="card-text"><%= actor.bio %></p>
+                <h5 class="card-title"><span class="badge badge-primary">Birth Date:</span></h5>
+                <p class="card-text"><%= actor.birth_date %></p>
+                <h5 class="card-title"><span class="badge badge-primary">Birth Place:</span></h5>
+                <p class="card-text"><%= actor.birth_place %></p>
+              </div>
+            </div>
+          </div>
+        </div>    
+    <% else %>
+        <div class="card border-dark mb-3" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="<%= actor.image_url %>" class="card-img" alt="<%= actor.name %>">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><strong><%= actor.name %></strong></h5>
+                <h5 class="card-title"><span class="badge badge-danger">Fallecido</span></h5>
+                <p class="card-text"><%= actor.bio %></p>
+                <h5 class="card-title"><span class="badge badge-primary">Birth Date:</span></h5>
+                <p class="card-text"><%= actor.birth_date %></p>
+                <h5 class="card-title"><span class="badge badge-primary">Birth Place:</span></h5>
+                <p class="card-text"><%= actor.birth_place %></p>
+                <h5 class="card-title"><span class="badge badge-primary">Death Date:</span></h5>
+                <p class="card-text"><%= actor.death_date %></p>
+                <h5 class="card-title"><span class="badge badge-primary">Death Place:</span></h5>
+                <p class="card-text"><%= actor.death_place %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+
