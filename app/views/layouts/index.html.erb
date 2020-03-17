@@ -1,30 +1,31 @@
-<h1 class="text-center">Listado Actores</h1>
+  <h1 class="text-center">Listado de Actores</h1>
+  <div class="row">
   <% @actores.each do | actor | %>
-    <div class="card border-dark mb-3 center-block" >
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="<%= actor.image_url %>" class="card-img" alt="<%= actor.name %>">
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card bg-light mb-3 mt-4">
+        <div class="card-header text-center">
+          <h4><strong><%= actor.name %></strong></h4>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><strong><%= actor.name %></strong></h5>
+        <img class="card-img-top" src="<%= actor.image_url%>" alt="<%= actor.name %>">
+        <div class="card-body">
+          <h4 class="card-title"><strong>Biography</strong></h4>
+          <% if !actor.alive %>
+            <h5 class="card-title"><span class="badge badge-danger">Death</span></h1>
+          <% end %>          
+          <p class="card-text"><%= actor.bio %></p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="badge badge-primary">Birth Date:</span> <%= actor.birth_date%></li>
+            <li class="list-group-item"><span class="badge badge-primary">Birth Place:</span> <%= actor.birth_place%></li>
             <% if !actor.alive %>
-                <h5 class="card-title"><span class="badge badge-danger">Fallecido</span></h1>
+            <li class="list-group-item"><span class="badge badge-danger">Death Date:</span> <%= actor.death_date%></li>
+            <li class="list-group-item"><span class="badge badge-danger">Death Place:</span> <%= actor.death_place%></li>
             <% end %>
-            <p class="card-text"><%= actor.bio %></p>
-            <h5 class="card-title"><span class="badge badge-primary">Birth Date:</span></h5>
-            <p class="card-text"><%= actor.birth_date %></p>
-            <h5 class="card-title"><span class="badge badge-primary">Birth Place:</span></h5>
-            <p class="card-text"><%= actor.birth_place %></p>
-            <% if !actor.alive %>
-              <h5 class="card-title"><span class="badge badge-primary">Death Date:</span></h5>
-              <p class="card-text"><%= actor.death_date %></p>
-              <h5 class="card-title"><span class="badge badge-primary">Death Place:</span></h5>
-              <p class="card-text"><%= actor.death_place %></p>
-            <% end %>
-          </div>
+          </ul>        
         </div>
-      </div>
-    </div>    
+      </div>    
+    </div>
   <% end %>
+  </div>
+
+
 
