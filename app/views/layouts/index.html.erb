@@ -8,10 +8,13 @@
         </div>
         <img class="card-img-top" src="<%= actor.image_url%>" alt="<%= actor.name %>">
         <div class="card-body">
-          <h4 class="card-title"><strong>Biography</strong></h4>
-          <% if !actor.alive %>
-            <h5 class="card-title"><span class="badge badge-danger">Death</span></h1>
-          <% end %>          
+          <div class="card-title">
+          <h4><strong>Biography</strong>
+            <% if !actor.alive %>
+              <span class="badge badge-danger">Death</span>
+            <% end %>
+          </h4>
+          </div>          
           <p class="card-text"><%= actor.bio %></p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><span class="badge badge-primary">Birth Date:</span> <%= actor.birth_date%></li>
