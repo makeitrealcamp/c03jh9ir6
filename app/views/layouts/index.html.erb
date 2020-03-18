@@ -1,0 +1,41 @@
+  <h1 class="text-center">Listado de Actores</h1>
+  <div class="row">
+  <% @actores.each do | actor | %>
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card bg-light mb-3 mt-4">
+        <div class="card-header text-center">
+          <h4><strong><%= actor.name %></strong></h4>
+        </div>
+        <img class="card-img-top" src="<%= actor.image_url%>" alt="<%= actor.name %>">
+        <div class="card-body">
+          <div class="card-title">
+            <h4><strong>Biography</strong>
+              <% if !actor.alive %>
+                <span class="badge badge-danger">Death</span>
+              <% end %>
+            </h4>
+          </div>          
+          <p class="card-text"><%= actor.bio %></p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="badge badge-primary">Birth Date:</span> <%= actor.birth_date%></li>
+            <li class="list-group-item"><span class="badge badge-primary">Birth Place:</span> <%= actor.birth_place%></li>
+            <% if !actor.alive %>
+            <li class="list-group-item"><span class="badge badge-danger">Death Date:</span> <%= actor.death_date%></li>
+            <li class="list-group-item"><span class="badge badge-danger">Death Place:</span> <%= actor.death_place%></li>
+            <% end %>
+          </ul>        
+        </div>
+      </div>    
+    </div>
+  <% end %>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <div class="text-center">
+        <a href="actors/new" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Crear Actor</a>
+      </div>
+    </div>
+  </div>
+
+
+

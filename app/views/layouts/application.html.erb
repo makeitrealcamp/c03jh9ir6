@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title>C03jh9ir6</title>
+    <title>Base Datos Actores</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Archivos Bootstrap  --> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/bootstrap.min.js" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
