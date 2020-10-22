@@ -1,0 +1,41 @@
+<style type="">
+	{display: inline-block;}
+	{ text-align: center; }
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h1>Crear Actor</h1>
+			<%= form_for @actors do |f| %>
+				<div class="form-group">
+					<%= f.text_field :name, class: "form-control input-lg", placeholder:"Ingresa el nombre del actor" %>
+				</div>
+				<div class="form-group">
+				<%= f.text_area :bio, class: "form-control input-lg", placeholder:"Ingresa la biografia del actor" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :birth_date, class: "form-control input-lg", placeholder:"Ingresa la fecha de nacimiento del actor AA-MM-DD" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :birth_place, class: "form-control input-lg", placeholder:"ingresa el lugar de nacimiento del actor" %>
+				</div>
+				<div class="form-group">
+					<%= f.url_field :image_url, class: "form-control input-lg", placeholder:"Ingresa la URL de la imagen del actor" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :alive, class: "form-control input-lg", placeholder:"Ingresa true si el actor esta vivo o false si esta muerto" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :death_date, class: "form-control input-lg", placeholder:"Ingresa la fecha de muerte del actor" %>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :death_place, class: "form-control input-lg", placeholder:"Ingresa el lugar de muerte del actor" %>
+				</div>
+				<div class="form-group">
+					<%= f.submit "Publicar Actor", class: "btn btn-primary btn-lg btn-block" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
