@@ -13,11 +13,18 @@ class ActorsController < ApplicationController
   end
 
   def create
-    @actor = Actor.create(actor_params)
+    new_actor = {
+      name: params[:actor][:name],
+      bio: params[:actor][:bio],
+      birth_date: params[:actor][:birth_date],
+      birth_place: params[:actor][:birth_place],
+      image_url: params[:actor][:image_url],
+      alive: params[:actor][:alive],
+      death_date: params[:actor][:death_date],
+      death_place: params[:actor][:death_place]
+    }
+    @actor = Actor.create(new_actor)
     redirect_to actors_path
   end
 
-  def actor_params
-    params.require(:actor).permit(:name).permit(:bio).permit(:birth_date).permit(:birth_place).permit(:image_url).permit(:alive).permit(:death_date).permit( :death_place)
-  end
 end
