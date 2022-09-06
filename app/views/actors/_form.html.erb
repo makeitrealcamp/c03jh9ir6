@@ -1,0 +1,48 @@
+<div>
+  <h2><%= form_title %></h2>
+
+  <%= form_for @actor do |form| %>
+    <div>
+      <%= form.text_field :name, placeholder:
+      "Ingresa el nombre del actor", autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.text_field :bio,
+      placeholder: "Ingresa la biografía del actor", autocomplete: "off"%>
+    </div>
+
+    <div>
+      <%= form.date_field :birth_date,
+      placeholder: "Ingresa la fecha de nacimiento del actor" %>
+    </div>
+
+    <div>
+      <%= form.text_field :birth_place,
+      placeholder: "Ingresa el lugar de nacimiento del actor", autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.url_field :image_url,
+      placeholder: "Ingresa el link de una foto del actor", autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.select :alive, [["Vivo", true], ["Fallecido", false]] %>
+    </div>
+
+    <div>
+      <%= form.date_field :death_date,
+      placeholder: "Ingresa la fecha de fallecimiento del actor" %>
+    </div>
+
+    <div>
+      <%= form.text_field :death_place,
+      placeholder: "Ingresa el lugar de fallecimiento del actor", autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= form.submit form_title %>
+    </div>
+  <% end %>
+</div>
