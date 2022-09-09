@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Agregar actor</h1>
+      <%= form_for @actor do |a| %>
+        <div class="form-group">
+          <%= a.text_field :name, class: "form-control input-lg",
+          placeholder: "Ingresa el nombre del actor" %>
+        </div>
+        <div class="form-group">
+          <%= a.text_area :bio, class: "form-control input-lg",
+          placeholder: "Ingresa la biografía del actor" %>
+        </div>
+        <div class="form-group">
+          <%= a.date_select :birth_date, class: "form-control input-lg"%>
+        </div>
+        <div class="form-group">
+          <%= a.text_field :birth_place, class: "form-control input-lg",
+          placeholder: "Ingresa el lugar de nacimiento del actor" %>
+        </div>
+        <div class="form-group">
+          <%= a.url_field :image_url, class: "form-control input-lg",
+          placeholder: "Ingresa la URL de la imagen" %>
+        </div>
+        <div class="form-group" style="display:flex">
+          <p style="margin: auto 0.5rem auto 0">El actor está vivo</p>
+          <%= a.check_box :alive, class: "form-control input-lg", style: "align-self: center;width: fit-content; margin: 0" %>
+        </div>
+        <div class="form-group">
+          <%= a.date_select :death_date, class: "form-control input-lg"%>
+        </div>
+        <div class="form-group">
+          <%= a.text_field :death_place, class: "form-control input-lg",
+          placeholder: "Ingresa el lugar de fallecimiento del actor" %>
+        </div>
+        </div>
+
+
+        <div class="">
+          <%= a.submit "Agregar actor", class:"btn btn-primary btn-lg
+          btn-block"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
